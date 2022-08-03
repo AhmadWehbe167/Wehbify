@@ -1,12 +1,14 @@
 :root {
   --color-primary: #2584ff;
-  --color-primary-lighten:#2584c5;
+  --color-primary-lighten: #2584c5;
   --color-secondary: #00d9ff;
   --color-secondary-lighten: #00d9d0;
   --color-accent: #ff3400;
   --color-accent-lighten: #aa0000;
   --color-headings: #1b0760;
   --color-body: #918ca4;
+  --color-border: #ccc;
+  --border-raduis:30px;
 }
 
 /* Typography */
@@ -227,12 +229,47 @@ a {
 }
 
 .btn--outline:hover {
-    background: var(--color-headings);
-    color: white;
+  background: var(--color-headings);
+  color: white;
 }
 
-@media screen and (min-width:1024px) {
-    .btn{
-        font-size: 1.5rem;
-    }
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* Inputs */
+.input {
+  border-radius: var(--border-raduis);
+  border: 1px solid var(--color-border);
+  color: var(--color-headings);
+  font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 3.5rem;
+}
+
+::placeholder {
+  color: #cdcbd7;
+}
+
+.input-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-raduis);
+  display: flex;
+}
+
+.input-group .input{
+  border: 0;
+  flex-grow: 1;
+}
+
+.input-group .btn{
+  margin: 0;
+}
+
+@media screen and (min-wdith: 1024px) {
+  .input {
+    font-size: 1.5rem;
+  }
 }
