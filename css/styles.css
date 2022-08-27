@@ -161,12 +161,16 @@ a {
   height: 40px;
 }
 
-.icon--small{
+.icon--small {
   height: 16px;
 }
 
 .icon--primary {
   fill: var(--color-primary);
+}
+
+.icon--white{
+  fill: white;
 }
 
 .icon-container {
@@ -184,27 +188,26 @@ a {
   height: 46px;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .icon-container {
     width: 56px;
     height: 56px;
   }
-  .icon--small{
+  .icon--small {
     height: 20px;
   }
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
   .icon-container {
     width: 68px;
     height: 68px;
   }
 
-  .icon--small{
+  .icon--small {
     height: 22px;
   }
 }
-
 
 /* Buttons */
 
@@ -255,7 +258,7 @@ a {
   box-sizing: border-box;
 }
 
-.btn--stretched{
+.btn--stretched {
   padding-left: 6rem;
   padding-right: 6rem;
 }
@@ -444,55 +447,56 @@ a {
   font-style: normal;
 }
 
-.quote__line{
+.quote__line {
   position: relative;
   bottom: 10px;
 }
 
-@media screen and (min-width:768px) {
-  .quote{
+@media screen and (min-width: 768px) {
+  .quote {
     text-align: start;
   }
 }
 
-@media screen and (min-width:1024px) {
-  .quote{
+@media screen and (min-width: 1024px) {
+  .quote {
     font-size: 2rem;
   }
-  .quote__author{
+  .quote__author {
     font-size: 2.4rem;
   }
-  .quote__organization{
+  .quote__organization {
     font-size: 1.6rem;
   }
   .quote__text::after {
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quis perferendis id soluta unde voluptatum pariatur doloremque aspernatur, quaerat amet" close-quote;
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quis perferendis id soluta unde voluptatum pariatur doloremque aspernatur, quaerat amet"
+      close-quote;
   }
 }
 
 /* Grids */
-.grid{
+.grid {
   display: grid;
 }
 
-@media screen and (min-width:768px) {
-  .grid--cols-2{
+@media screen and (min-width: 768px) {
+  .grid--cols-2 {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (min-width:1024px) {
-  .grid--cols-3{
+@media screen and (min-width: 1024px) {
+  .grid--cols-3 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Testimonial */
-.testimonial{
+.testimonial {
   padding: 2rem;
 }
 
-.testimonial .grid{
+.testimonial .grid {
   width: 95%;
 }
 
@@ -501,7 +505,7 @@ a {
   width: 100%;
 }
 
-.testimonial__image{
+.testimonial__image {
   width: 100%;
 }
 
@@ -509,7 +513,7 @@ a {
   width: 100%;
 }
 
-.quote-icon{
+.quote-icon {
   fill: white;
   background: var(--color-accent);
   position: absolute;
@@ -517,32 +521,32 @@ a {
   top: 10%;
 }
 
-.testimonial blockquote{
+.testimonial blockquote {
   margin: 0.5rem;
   margin-top: 2rem;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .testimonial .quote,
-  .testimonial .quote__author{
+  .testimonial .quote__author {
     font-size: 2.8rem;
   }
-  .testimonial .quote{
+  .testimonial .quote {
     margin-left: 6rem;
   }
-  .quote-icon{
+  .quote-icon {
     right: -23px;
   }
-  .testimonial blockquote{
+  .testimonial blockquote {
     margin-top: 0;
   }
-  .testimonial .grid{
+  .testimonial .grid {
     width: 100%;
   }
 }
 
-@media screen and (min-width:1024px) {
-  .quote-icon{
+@media screen and (min-width: 1024px) {
+  .quote-icon {
     right: -34px;
   }
 }
@@ -554,23 +558,23 @@ a {
   border-radius: 5px;
 }
 
-.callout--primary{
+.callout--primary {
   background: var(--color-primary);
   color: #fff;
 }
 
-.callout__heading{
+.callout__heading {
   color: #fff;
   margin-top: 0;
   font-size: 3rem;
 }
 
-.callout .btn{
+.callout .btn {
   justify-self: center;
   align-self: center;
 }
 
-.callout__content{
+.callout__content {
   text-align: center;
 }
 
@@ -578,8 +582,8 @@ a {
   .callout .grid--cols-2 {
     grid-template-columns: 1fr auto;
   }
-  
-  .callout__content{
+
+  .callout__content {
     text-align: start;
   }
 
@@ -587,7 +591,46 @@ a {
     justify-self: start;
     margin: 2rem;
   }
+}
 
+/* Collapsibles */
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+}
 
-  
+.collapsible__heading {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.collapsible__chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.collapsible__expanded .collapsible__chevron {
+  transform: rotate(0);
+}
+
+.collapsible__expanded .collapsible__content{
+  max-height: 100vh;
+  opacity: 1;
+}
+
+.collapsible__icon {
+  background: grey;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
